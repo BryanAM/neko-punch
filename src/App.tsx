@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="App theme">
       <h1 className="app-header">ねこぱんち</h1>
-      {!catUrl && !loading && <p>Press the button to get cat</p>}
+      {!catUrl && !loading && <p className="app-action-description">ボタンをぱんちしてみよ〜</p>}
       {(catUrl || loading) && (loading? (
         <p>ロード中...</p>
       ) : (
