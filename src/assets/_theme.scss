@@ -2,9 +2,10 @@
 
 .theme {
   // Primary App Colors
+  --app-bg-color: #{$AppBGColor};
 
   // App Text Colors 
-  --app-bg-color: #{$AppBGColor};
+  --header-color: #{$HeaderColor};  
 
 
   // Buttons and Links

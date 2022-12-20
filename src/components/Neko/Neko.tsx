@@ -7,9 +7,9 @@ interface NekoProps {
 
 function Neko ({catUrl}: NekoProps) {
   return(
-    <>
+    <div className="neko-polaroid">
       <img className="neko" alt="cat" src={catUrl} />
-    </>
+    </div>
   );
 };
 

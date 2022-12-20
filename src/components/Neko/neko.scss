@@ -1,8 +1,22 @@
+.neko-polaroid {
+  max-width: 20rem;
+  border: 16px solid white;
+  border-bottom: 48px solid white;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
 .neko { 
   display: flex;
-  min-height: 15rem;
+  border-radius: 8px;
+  max-width:100%;
   max-height: 15rem;
-  width: auto;
-  border-radius: 24px;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+// small screens
+@media screen and (max-width: 320px) {
+  .neko-polaroid {
+    max-width: 15rem;
+  }
 }
