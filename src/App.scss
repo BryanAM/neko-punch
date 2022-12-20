@@ -3,15 +3,29 @@
 .App {
   background: var(--app-bg-color);
   text-align: center;
-  min-height: 100vh;
+  height: 100vh;
+  height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 128px;
+
+  .app-header {
+    position: absolute;
+    font-family: 'Nikukyu';
+    top: 24px;
+    line-height: 80px;
+    font-size: 64px;
+    color: transparent;
+    background: linear-gradient(#3c3dcf, #C4C4F1);
+    background-clip: text;
+  }
 }
 
 .cat-button {
+  position: absolute;
+  bottom: 24px;
   background-color: var(--button-bg-color);
   border: none;
   padding: 16px 24px;

@@ -28,15 +28,14 @@ function App() {
 
   return (
     <div className="App theme">
-      <header className="App-header">
-      </header>
+      <h1 className="app-header">ねこぱんち</h1>
       {!catUrl && !loading && <p>Press the button to get cat</p>}
       {(catUrl || loading) && (loading? (
-        <p>Loading</p>
+        <p>ロード中...</p>
       ) : (
         <Neko catUrl={catUrl} />
       ))}
-      <button className="cat-button" type="button" onClick={getCat}>Neko Punch</button>
+      <button className="cat-button" type="button" onClick={getCat}>ぱんち</button>
     </div>
   );
 }
