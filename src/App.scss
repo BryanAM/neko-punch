@@ -28,20 +28,28 @@
 .cat-button {
   position: absolute;
   bottom: 24px;
-  border: 2px solid #FFF;
   background-color: var(--button-bg-color);
   padding: 16px 24px;
   cursor: pointer;
+  border: none;
   color: white;
   font-size: 24px;
   border-radius: 8px;
   transition: background-color ease-in-out 200ms;
   transition: scale ease-in-out 300ms;
+  transition: background-color ease-in-out 300ms;
   
 
-  &:hover, &:focus {
+  &:hover, &:focus, &:active {
     background-color: var(--button-bg-color-hover);
     scale: 1.01;
+    box-shadow: rgba(255, 138, 0, 0.3) 0px 10px 30px;
+    
+  }
+
+  &:active {
+    transition: scale ease-in-out 100ms;
+    scale: 0.9;
   }
 }
 
