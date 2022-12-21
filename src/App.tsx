@@ -31,7 +31,10 @@ function App() {
       <h1 className="app-header">ねこぱんち</h1>
       {!catUrl && !loading && <p className="app-action-description">ボタンをぱんちしてみよ〜</p>}
       {(catUrl || loading) && (loading? (
-        <p>ロード中...</p>
+        <>
+          <span className="loader"></span>
+          <p className="loader-text">ロード中...🐾</p>
+        </>
       ) : (
         <Neko catUrl={catUrl} />
       ))}
