@@ -1,0 +1,24 @@
+.menu {
+  position: absolute;
+  top: 192px;
+  left: 0;
+  bottom: 0;
+  right: 100%;
+  background: linear-gradient(190deg, #ADAEEB, #3c3dcf);
+  border-top-right-radius: 48px;
+  transition: right ease-in-out 300ms;
+  overflow: hidden;
+  z-index: 1;
+
+  &.open {
+    right: 0;
+  }
+}
+
+
+// large screens 
+@media screen and (max-width: 320px) {
+  .menu {
+    top: 144px;
+  }
+}

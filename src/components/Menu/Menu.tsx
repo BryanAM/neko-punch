@@ -7,9 +7,9 @@ interface MenuProps {
 }
 function Menu({ open = false }: MenuProps) {
   return (
-    <section className={`menu ${open ? 'open' : ''}`}>
-      Menu
-    </section>
+    <div className={`menu ${open ? 'open' : ''}`}>
+      <h2>猫のフィルター</h2>
+    </div>
   )
 };
 

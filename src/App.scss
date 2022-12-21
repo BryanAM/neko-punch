@@ -53,7 +53,7 @@
   &:hover, &:focus, &:active {
     background-color: var(--button-bg-color-hover);
     scale: 1.01;
-    box-shadow: rgba(255, 138, 0, 0.3) 0px 10px 30px;
+    box-shadow: var(--app-sunrise-box-shadow);
     
   }
 
@@ -90,6 +90,14 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  
+
+  &:hover {
+    .line {
+      transition: stroke ease-in-out 200ms;
+      stroke:var(--button-bg-color-hover);
+    }
+  }
 }
 .hamRotate180.active {
   transform: rotate(180deg);
@@ -164,7 +172,6 @@
 @media screen and (max-width: 320px) {
   .App {
     .app-header {
-      top: 8px;
       font-size: 48px;
     }
   }
