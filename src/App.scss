@@ -23,6 +23,16 @@
   .app-action-description {
     font-size: 24px;
   }
+
+  .app-menu-button {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .cat-button {
@@ -70,6 +80,44 @@
 .loader-text {
   position: absolute;
 }
+
+
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+.line {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke:var(--spinner-color);
+  stroke-width: 5.5;
+  stroke-linecap:round;
+}
+.ham5 .top {
+  stroke-dasharray: 41 82;
+}
+.ham5 .bottom {
+  stroke-dasharray: 41 82;
+}
+.ham5.active .top {
+  stroke-dasharray: 14 82;
+  stroke-dashoffset: -70px;
+}
+.ham5.active .bottom {
+  stroke-dasharray: 14 82;
+  stroke-dashoffset: -70px;
+}
+
+
+
 
 @keyframes mltShdSpin {
   0% {

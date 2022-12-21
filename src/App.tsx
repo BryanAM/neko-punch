@@ -1,11 +1,14 @@
 import React, {SetStateAction, useState} from 'react';
 import './App.scss';
+import Menu from './components/Menu/Menu';
+import { ReactComponent as Hamburger } from './assets/hamburger.svg';
 import Neko from './components/Neko/Neko';
 
 
 function App() {
   const [catUrl, setCatUrl] = useState('');
   const [loading, setLoading] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const getCat = async () => {
     setLoading(true);
     await fetch('https://cataas.com/cat')
@@ -28,6 +31,10 @@ function App() {
 
   return (
     <div className="App theme">
+      <button className="app-menu-button" onClick={() => setMenuOpen(!menuOpen)}>
+        <Hamburger className={`ham hamRotate180 ham5 ${menuOpen ? 'active' : ''}`}/>
+      </button>
+      <Menu open={menuOpen}/>
       <h1 className="app-header">ねこぱんち</h1>
       {!catUrl && !loading && <p className="app-action-description">ボタンをぱんちしてみよ〜</p>}
       {(catUrl || loading) && (loading? (
