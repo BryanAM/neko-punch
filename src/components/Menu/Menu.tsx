@@ -11,6 +11,7 @@ interface MenuProps {
 function Menu({ open = false, setCustomAPI}: MenuProps) {
   const [gif, setGif] = useState(false);
   const [tags, setTags] = useState<string[]>([]);
+  const [selectedTag, setSelectedTag] = useState<string>('');
   const [catSays, setCatSays] = useState('');
 
   const getTagData = useCallback(async () => {
@@ -29,7 +30,12 @@ function Menu({ open = false, setCustomAPI}: MenuProps) {
   }, [tags]);
 
 
-
+  const onReset = () => {
+    setCustomAPI({})
+    setGif(false);
+    setSelectedTag('')
+    setCatSays('')
+  };
 
   useEffect(() => {
     getTagData();
@@ -46,17 +52,17 @@ function Menu({ open = false, setCustomAPI}: MenuProps) {
         
         <div className="menu-item">
           <label htmlFor="select-tag">猫のタグを選ぶ</label>
-          <Select id="select-tag" data={tags} disabled={gif}/>
+          <Select id="select-tag" data={tags} disabled={gif} selectedTag={selectedTag} setSelected={setSelectedTag}/>
         </div>
 
         <div className="menu-item">
           <label htmlFor="cat-says">猫はなんという</label>
-          <input onChange={(e) => setCatSays(e.target.value)}className="menu-cat-says-input" id="cat-says" placeholder="にゃーん"  disabled={gif}/>
+          <input onChange={(e) => setCatSays(e.target.value)}className="menu-cat-says-input" id="cat-says" placeholder="にゃーん"  disabled={gif} value={catSays}/>
         </div>
 
         <div>
           <button className="menu-action-button apply">適応</button>
-          <button className="menu-action-button reset" onClick={() => setCustomAPI({})}>リセット</button>
+          <button className="menu-action-button reset" onClick={() => onReset()}>リセット</button>
         </div>
       </div>
     </div>
