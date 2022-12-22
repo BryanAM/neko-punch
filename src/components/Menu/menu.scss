@@ -21,12 +21,19 @@
   }
 
   &-item {
+    p {
+      color: white;
+      font-weight: 800;
+    }
     display: flex;
     align-items: center;
     
   }
 
   &-toggle {
+    border: 2px solid white;
+    border-radius: 16px;
+    padding: 16px;
     justify-content: space-between;
   }
   
