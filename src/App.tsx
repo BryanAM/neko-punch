@@ -5,20 +5,56 @@ import { ReactComponent as Hamburger } from './assets/hamburger.svg';
 import Neko from './components/Neko/Neko';
 
 
+interface CustomAPI {
+  gif: boolean,
+  selectedTag: string,
+  catSays: string,
+}
+
 function App() {
   const [catUrl, setCatUrl] = useState('');
   const [loading, setLoading] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [customAPI, setCustomAPI] = useState({});
+  const [catError, setCatError] = useState(false);
+  const [customAPI, setCustomAPI] = useState<CustomAPI>({
+    gif: false,
+    selectedTag: '',
+    catSays: ''
+  });
+
+
+const getAPIString = (): string => {
+  if(!customAPI.gif && customAPI.selectedTag === ''  && customAPI.catSays === ''){
+    return 'https://cataas.com/cat';
+  }
+
+  if(customAPI.gif) {
+    return 'https://cataas.com/cat/gif'
+  }
+
+  if(customAPI.selectedTag && !customAPI.catSays) {
+    return `https://cataas.com/cat/${customAPI.selectedTag}`
+  }
+
+  if(customAPI.catSays && !customAPI.selectedTag) {
+    return `https://cataas.com/cat/says/${customAPI.catSays}`
+  }
+  return `https://cataas.com/cat/${customAPI.selectedTag}/says/${customAPI.catSays}`;
+};
+
 
 
   const getCat = async () => {
     setLoading(true);
-    await fetch('https://cataas.com/cat')
+    setCatError(false);
+
+    const apiString = getAPIString();
+    await fetch(apiString)
     .then(response => {
       if(response.ok) {
         return response.blob();
       }
+      return Promise.reject(response)
     })
     .then((blob) => {
       // blob could be type Blob | undefined so we need to check
@@ -28,7 +64,19 @@ function App() {
         setLoading(false);
       }
     })
+    .catch((response) => {
+      console.log(response.status, response.statusText)
+      setLoading(false);
+      setCatError(true)
+      setCustomAPI({
+        gif: false,
+        selectedTag: '',
+        catSays: ''
+      })
+    })
   };
+
+
 
   return (
     <div className="App theme">
@@ -37,8 +85,9 @@ function App() {
       </button>
       <Menu open={menuOpen} setCustomAPI={setCustomAPI}/>
       <h1 className="app-header">ねこぱんち</h1>
-      {!catUrl && !loading && <p className="app-action-description">ボタンをぱんちしてみよ〜</p>}
-      {(catUrl || loading) && (loading? (
+      {catError && <p className="app-action-description">🙀その猫は存在してないかもしれにゃん〜。別のフィルターをためすか再びボタンをぱんち！</p>}
+      {!catUrl && !catError &&!loading && <p className="app-action-description">ボタンをぱんちしてみよ</p>}
+      {!catError && (catUrl || loading) && (loading? (
         <>
           <span className="loader"></span>
           <p className="loader-text">ロード中...🐾</p>

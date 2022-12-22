@@ -31,7 +31,13 @@ function Menu({ open = false, setCustomAPI}: MenuProps) {
 
 
   const onReset = () => {
-    setCustomAPI({})
+    const apiObj = {
+      gif: false,
+      selectedTag: '',
+      catSays: ''
+    }
+
+    setCustomAPI(apiObj)
     setGif(false);
     setSelectedTag('')
     setCatSays('')
@@ -43,7 +49,6 @@ function Menu({ open = false, setCustomAPI}: MenuProps) {
       selectedTag: selectedTag,
       catSays: catSays
     }
-
     setCustomAPI(apiObj);
   }
 
@@ -66,7 +71,7 @@ function Menu({ open = false, setCustomAPI}: MenuProps) {
         </div>
 
         <div className="menu-item">
-          <label htmlFor="cat-says">猫はなんという</label>
+          <label htmlFor="cat-says">猫はなんという「英語のみ」</label>
           <input onChange={(e) => setCatSays(e.target.value)}className="menu-cat-says-input" id="cat-says" placeholder="にゃーん"  disabled={gif} value={catSays}/>
         </div>
 
