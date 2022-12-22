@@ -12,7 +12,18 @@ function Menu({ open = false }: MenuProps) {
   return (
     <div className={`menu ${open ? 'open' : ''}`}>
       <h2 className="menu-header">猫のフィルター</h2>
-      <Toggle change={() => { setGif(!gif)}} checked={gif} label="GIFアニメーション"/>
+      <div className="menu-container">
+        <div className="menu-item menu-toggle">
+          <p>GIFアニメーション</p>
+          <Toggle change={() => { setGif(!gif)}} checked={gif} label="GIFアニメーション"/>
+        </div>
+
+        <div className="menu-item menu-toggle">
+          <p>GIFアニメーション</p>
+          <Toggle change={() => { setGif(!gif)}} checked={gif} label="GIFアニメーション"/>
+        </div>
+        
+      </div>
     </div>
   )
 };

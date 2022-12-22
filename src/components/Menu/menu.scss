@@ -1,5 +1,5 @@
 .menu {
-  display: flex;
+  display: block;
   flex-direction: column;
   position: absolute;
   top: 192px;
@@ -11,6 +11,24 @@
   transition: right ease-in-out 200ms;
   overflow: hidden;
   z-index: 1;
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    
+  }
+
+  &-toggle {
+    justify-content: space-between;
+  }
   
 
   &-header {
