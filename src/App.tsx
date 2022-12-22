@@ -1,4 +1,4 @@
-import React, {SetStateAction, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.scss';
 import Menu from './components/Menu/Menu';
 import { ReactComponent as Hamburger } from './assets/hamburger.svg';
@@ -28,7 +28,6 @@ function App() {
         setLoading(false);
       }
     })
-
   };
 
 

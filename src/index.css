@@ -18,5 +18,6 @@ p, h1, h2 {
 
 
 button {
-  font-family: Hiragino Maru Gothic ProN;
+  font-family: inherit;
+  font-weight: 600;
 }

@@ -6,11 +6,12 @@ import './menu.scss';
 
 interface MenuProps {
   open: Boolean;
-  setCustomAPI: {};
+  setCustomAPI: React.Dispatch<React.SetStateAction<any>>;
 }
-function Menu({ open = false, setCustomAPI = {}}: MenuProps) {
+function Menu({ open = false, setCustomAPI}: MenuProps) {
   const [gif, setGif] = useState(false);
   const [tags, setTags] = useState<string[]>([]);
+  const [catSays, setCatSays] = useState('');
 
   const getTagData = useCallback(async () => {
     await fetch('https://cataas.com/api/tags')
@@ -26,6 +27,9 @@ function Menu({ open = false, setCustomAPI = {}}: MenuProps) {
         console.log(error);
       })
   }, [tags]);
+
+
+
 
   useEffect(() => {
     getTagData();
@@ -47,7 +51,12 @@ function Menu({ open = false, setCustomAPI = {}}: MenuProps) {
 
         <div className="menu-item">
           <label htmlFor="cat-says">猫はなんという</label>
-          <input className="menu-cat-says-input" id="cat-says" placeholder="にゃーん"/>
+          <input onChange={(e) => setCatSays(e.target.value)}className="menu-cat-says-input" id="cat-says" placeholder="にゃーん" />
+        </div>
+
+        <div>
+          <button className="menu-action-button apply">適応</button>
+          <button className="menu-action-button reset" onClick={() => setCustomAPI({})}>リセット</button>
         </div>
       </div>
     </div>
