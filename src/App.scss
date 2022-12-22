@@ -3,7 +3,7 @@
 .App {
   background: var(--app-bg-color);
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
   height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
