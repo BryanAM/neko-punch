@@ -39,8 +39,10 @@ function Menu({ open = false }: MenuProps) {
           <p>GIFアニメーションのみ</p>
           <Toggle change={() => { setGif(!gif)}} checked={gif} label="GIFアニメーション"/>
         </div>
-          <Select id="select-tag" data={tags} />
+        
         <div className="menu-item">
+          <label htmlFor="select-tag">猫のタグを選ぶ</label>
+          <Select id="select-tag" data={tags} />
         </div>
       </div>
     </div>

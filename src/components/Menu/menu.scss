@@ -22,16 +22,19 @@
   }
 
   &-item {
-    p {
+    p, label {
       color: white;
       font-weight: 800;
     }
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
     
   }
 
   &-toggle {
+    flex-direction: row;
+    align-items: center;
     border: 2px solid white;
     border-radius: 16px;
     padding: 16px;

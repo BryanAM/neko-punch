@@ -8,13 +8,13 @@ interface SelectProps {
 }
 function Select({data, id}: SelectProps) {
   return (
-    <div>
-       <label htmlFor={id}>Standard Select</label>
+    <div className="select">
       <select id={id}>
         {data?.map((data) => (
           <option key={data}>{data}</option>
         ))}
       </select>
+      <span className="focus"></span>
     </div>
   );
 };
