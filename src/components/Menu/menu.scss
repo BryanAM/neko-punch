@@ -1,4 +1,6 @@
 .menu {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 192px;
   left: 0;
@@ -6,9 +8,13 @@
   right: 100%;
   background: linear-gradient(190deg, #ADAEEB, #3c3dcf);
   border-top-right-radius: 48px;
-  transition: right ease-in-out 300ms;
+  transition: right ease-in-out 200ms;
   overflow: hidden;
   z-index: 1;
+
+  &-header {
+    color: var(--text-secondary-color);
+  }
 
   &.open {
     right: 0;

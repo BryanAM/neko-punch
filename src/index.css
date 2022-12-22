@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-p {
+p, h1, h2 {
   color: var(--text-color);
 }
 
