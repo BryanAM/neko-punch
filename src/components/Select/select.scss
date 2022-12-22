@@ -28,6 +28,9 @@ select {
 
   // Remove focus outline, will add on alternate element
   outline: none;
+  &[disabled] {
+    cursor: not-allowed;
+  }
 }
 
 .select {

@@ -5,11 +5,12 @@ import './select.scss';
 interface SelectProps {
   data: string[] | undefined;
   id: string;
+  disabled: boolean | undefined;
 }
-function Select({data, id}: SelectProps) {
+function Select({data, id, disabled}: SelectProps) {
   return (
     <div className="select">
-      <select id={id}>
+      <select id={id} disabled={disabled}>
         {data?.map((data) => (
           <option key={data}>{data}</option>
         ))}

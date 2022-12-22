@@ -57,6 +57,12 @@
       border-radius: 8px;
       border: 2px solid rgba(255,255,255, 0.5);
     }
+
+    &:disabled {
+      background-color: #DADBF6;
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
   }
 
 
@@ -73,6 +79,11 @@
 
     &:hover, &focus {
       background-color: var(--button-bg-color-hover);
+    }
+
+    &:active {
+      transition: scale 300ms;
+      scale: 0.9;
     }
   }
   

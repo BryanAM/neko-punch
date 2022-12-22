@@ -46,12 +46,12 @@ function Menu({ open = false, setCustomAPI}: MenuProps) {
         
         <div className="menu-item">
           <label htmlFor="select-tag">猫のタグを選ぶ</label>
-          <Select id="select-tag" data={tags} />
+          <Select id="select-tag" data={tags} disabled={gif}/>
         </div>
 
         <div className="menu-item">
           <label htmlFor="cat-says">猫はなんという</label>
-          <input onChange={(e) => setCatSays(e.target.value)}className="menu-cat-says-input" id="cat-says" placeholder="にゃーん" />
+          <input onChange={(e) => setCatSays(e.target.value)}className="menu-cat-says-input" id="cat-says" placeholder="にゃーん"  disabled={gif}/>
         </div>
 
         <div>
