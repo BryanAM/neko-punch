@@ -6,11 +6,11 @@ import './menu.scss';
 
 interface MenuProps {
   open: Boolean;
+  setCustomAPI: {};
 }
-function Menu({ open = false }: MenuProps) {
+function Menu({ open = false, setCustomAPI = {}}: MenuProps) {
   const [gif, setGif] = useState(false);
   const [tags, setTags] = useState<string[]>([]);
-
 
   const getTagData = useCallback(async () => {
     await fetch('https://cataas.com/api/tags')
@@ -43,6 +43,11 @@ function Menu({ open = false }: MenuProps) {
         <div className="menu-item">
           <label htmlFor="select-tag">猫のタグを選ぶ</label>
           <Select id="select-tag" data={tags} />
+        </div>
+
+        <div className="menu-item">
+          <label htmlFor="cat-says">猫はなんという</label>
+          <input className="menu-cat-says-input" id="cat-says" placeholder="にゃーん"/>
         </div>
       </div>
     </div>

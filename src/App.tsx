@@ -9,6 +9,9 @@ function App() {
   const [catUrl, setCatUrl] = useState('');
   const [loading, setLoading] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [customAPI, setCustomAPI] = useState({});
+
+
   const getCat = async () => {
     setLoading(true);
     await fetch('https://cataas.com/cat')
@@ -34,7 +37,7 @@ function App() {
       <button className="app-menu-button" onClick={() => setMenuOpen(!menuOpen)}>
         <Hamburger className={`ham hamRotate180 ham5 ${menuOpen ? 'active' : ''}`}/>
       </button>
-      <Menu open={menuOpen}/>
+      <Menu open={menuOpen} setCustomAPI={setCustomAPI}/>
       <h1 className="app-header">ねこぱんち</h1>
       {!catUrl && !loading && <p className="app-action-description">ボタンをぱんちしてみよ〜</p>}
       {(catUrl || loading) && (loading? (
