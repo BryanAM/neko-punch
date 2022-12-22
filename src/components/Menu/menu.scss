@@ -3,7 +3,7 @@
   flex-direction: column;
   position: absolute;
   top: 192px;
-  right: 0;
+  right: 100%;
   bottom: 0;
   width: 100%;
   background: linear-gradient(190deg, #ADAEEB, #3c3dcf);
@@ -43,7 +43,7 @@
   }
 
   &.open {
-    right: 100%;
+    right: 0;
   }
 }
 
