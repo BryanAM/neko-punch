@@ -11,7 +11,6 @@ function Toggle({change, checked, label}: ToggleProps){
 
   return (
     <label className="toggle">
-      {label}
       <input type="checkbox" onChange={change} checked={checked}/>
       <span className="slider round"></span>
     </label>
