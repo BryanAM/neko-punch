@@ -37,6 +37,16 @@ function Menu({ open = false, setCustomAPI}: MenuProps) {
     setCatSays('')
   };
 
+  const onApply = () => {
+    const apiObj = {
+      gif: gif,
+      selectedTag: selectedTag,
+      catSays: catSays
+    }
+
+    setCustomAPI(apiObj);
+  }
+
   useEffect(() => {
     getTagData();
   }, [])
@@ -61,7 +71,7 @@ function Menu({ open = false, setCustomAPI}: MenuProps) {
         </div>
 
         <div>
-          <button className="menu-action-button apply">適応</button>
+          <button className="menu-action-button apply" onClick={() => onApply()}>適応</button>
           <button className="menu-action-button reset" onClick={() => onReset()}>リセット</button>
         </div>
       </div>

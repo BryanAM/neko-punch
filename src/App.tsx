@@ -30,7 +30,6 @@ function App() {
     })
   };
 
-
   return (
     <div className="App theme">
       <button className="app-menu-button" onClick={() => setMenuOpen(!menuOpen)}>
