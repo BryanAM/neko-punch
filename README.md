@@ -11,7 +11,7 @@ Then run the application `yarn start`.
 
 ## Technologies 
 
-- Cat data and API from [cataas.com](cataas.com)
+- Cat data API from [cataas.com](cataas.com)
 - Reach v18
 - TypeScript
 - Scss
