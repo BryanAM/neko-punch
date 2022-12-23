@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/neko-punch/static/css/main.4164289f.css",
+    "main.css": "/neko-punch/static/css/main.86ffa1bc.css",
     "main.js": "/neko-punch/static/js/main.51720ccb.js",
     "static/js/787.786f3393.chunk.js": "/neko-punch/static/js/787.786f3393.chunk.js",
     "index.html": "/neko-punch/index.html",
     "static/media/hamburger.svg": "/neko-punch/static/media/hamburger.dfe9c4ff88eee91c2a007bbbf1fa30c4.svg",
-    "main.4164289f.css.map": "/neko-punch/static/css/main.4164289f.css.map",
+    "main.86ffa1bc.css.map": "/neko-punch/static/css/main.86ffa1bc.css.map",
     "main.51720ccb.js.map": "/neko-punch/static/js/main.51720ccb.js.map",
     "787.786f3393.chunk.js.map": "/neko-punch/static/js/787.786f3393.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4164289f.css",
+    "static/css/main.86ffa1bc.css",
     "static/js/main.51720ccb.js"
   ]
 }
